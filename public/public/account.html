@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA-SELLING-X PROFILE</title>
+    <style>
+        /* 🌌 ULTIMATE CYBERPUNK MATTE BLACK & GHOST WHITE INFRASTRUCTURE */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #080808; color: #F5F5F5; overflow-x: hidden; padding-bottom: 90px; }
+        .app-container { padding: 15px; max-width: 480px; margin: 0 auto; }
+        
+        /* 👤 VIP SHREEWIN USER PROFILE CARD COMPONENT */
+        .vip-header-card {
+            background: linear-gradient(135deg, #161616, #0d0d0d); border: 1px solid #222222;
+            border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 15px; margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
+        .vip-avatar-box {
+            width: 55px; height: 55px; border-radius: 50%; background-color: #222222;
+            border: 2px solid #FFFFFF; display: flex; align-items: center; justify-content: center;
+            font-size: 24px; font-weight: bold; color: #FFFFFF;
+        }
+        .vip-meta-data { flex: 1; }
+        .vip-client-name { font-size: 16px; font-weight: 900; color: #FFFFFF; text-transform: uppercase; }
+        .vip-badge-row { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+        .vip-gold-tag { 
+            background: linear-gradient(90deg, #D4AF37, #AA7C11); color: #000000;
+            font-size: 9px; font-weight: 900; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;
+        }
+        .unique-uid-node { font-size: 11px; color: #888888; font-weight: bold; letter-spacing: 0.5px; }
+        .last-login-stamp { font-size: 10px; color: #444444; margin-top: 3px; font-family: monospace; }
+        
+        /* 💳 GIANT TOTAL BALANCE CARD (महा-वॉलेट) */
+        .giant-wallet-vault {
+            background-color: #121212; border: 1px solid #1c1c1c; border-radius: 16px;
+            padding: 25px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+        .wallet-metric-label { font-size: 12px; font-weight: bold; color: #666666; text-transform: uppercase; letter-spacing: 1px; }
+        .giant-balance-display { font-size: 36px; font-weight: 900; color: #FFFFFF; margin: 8px 0; letter-spacing: -0.5px; }
+        
+        /* 💸 MASTER WITHDRAW ACTION CONSOLE BUTTON */
+        .action-withdraw-btn {
+            width: 100%; padding: 15px; background-color: #FFFFFF; color: #000000;
+            border: none; border-radius: 10px; font-size: 14px; font-weight: 900;
+            text-transform: uppercase; cursor: pointer; letter-spacing: 1px; transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.08); margin-top: 5px;
+        }
+        .action-withdraw-btn:active { transform: scale(0.98); }
+        
+        /* 🎟️ REUSABLE PROMO VOUCHER VAULT GRID */
+        .promo-vault-card { background-color: #121212; border: 1px solid #1c1c1c; border-radius: 12px; padding: 16px; margin-bottom: 20px; }
+        .promo-vault-card h3 { font-size: 12px; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; font-weight: 800; }
+        .promo-input-group { display: flex; gap: 8px; }
+        .promo-input-group input { 
+            flex: 2; padding: 12px; background-color: #080808; border: 1px solid #222222; 
+            border-radius: 8px; color: #FFFFFF; font-size: 14px; outline: none; text-transform: uppercase;
+        }
+        .promo-claim-btn { 
+            flex: 1; background-color: #161616; color: #FFFFFF; border: 1px solid #222222;
+            border-radius: 8px; font-size: 12px; font-weight: 900; text-transform: uppercase; cursor: pointer;
+        }
+        .promo-claim-btn:active { background-color: #222222; }
+        .promo-status-response { font-size: 11px; font-weight: bold; margin-top: 8px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- 👤 SHREEWIN GEOMETRY VIP HEADER LAYER -->
+        <div class="vip-header-card">
+            <div class="vip-avatar-box">👤</div>
+            <div class="vip-meta-data">
+                <div class="vip-client-name" id="client-profile-name">Loading...</div>
+                <div class="vip-badge-row">
+                    <span class="vip-gold-tag">VIP 1</span>
+                    <span class="unique-uid-node" id="client-profile-uid">UID: ------</span>
+                </div>
+                <div class="last-login-stamp" id="client-last-login">Last login: 2026-09-30 14:07:00</div>
+            </div>
+        </div>
+
+        <!-- 💳 GIANT MASTER REVENUE WALLET COMPONENT -->
+        <div class="giant-wallet-vault">
+            <div class="wallet-metric-label">Total Balance</div>
+            <div class="giant-balance-display" id="client-wallet-balance">₹0.00</div>
+            <!-- 💸 DEDICATED CASH OUT INTERFACE TRANSITION TRIGGER -->
+            <button class="action-withdraw-btn" onclick="window.location.href='/withdraw.html'">Withdraw</button>
+        </div>
+
+        <!-- 🎟️ MULTI-USER MASTER REUSABLE VOUCHER MATRIX -->
+        <div class="promo-vault-card">
+            <h3>Redeem Gift Voucher</h3>
+            <div class="promo-input-group">
+                <input type="text" id="voucher-token-input" placeholder="Enter gift code">
+                <button class="promo-claim-btn" onclick="executeVoucherRedemption()">Claim</button>
+            </div>
+            <div class="promo-status-response" id="voucher-telemetry-msg"></div>
+        </div>
+
+        <!-- 📋 BOTTOM SERVICE ROUTER GRID COMPONENTS -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+            <div style="background-color: #121212; border: 1px solid #1c1c1c; border-radius: 12px; padding: 15px; cursor: pointer;" onclick="window.location.href='/history.html'">
+                <div style="font-size: 11px; color: #666666; font-weight: 800; text-transform: uppercase;">Withdraw History</div>
+                <div style="font-size: 13px; color: #FFFFFF; font-weight: bold; margin-top: 5px;">My Requests</div>
+            </div>
+            <div style="background-color: #121212; border: 1px solid #1c1c1c; border-radius: 12px; padding: 15px;">
+                <div style="font-size: 11px; color: #666666; font-weight: 800; text-transform: uppercase;">Data Sharing Logs</div>
+                <div style="font-size: 13px; color: #FFFFFF; font-weight: bold; margin-top: 5px;" id="client-total-mb">0.00 MB</div>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+            <!-- ⏱️ AUTOMATED TIME-LOCKED CUSTOMER SERVICE GATEWAY TRIGGER -->
+            <div style="background-color: #121212; border: 1px solid #1c1c1c; border-radius: 12px; padding: 15px; cursor: pointer;" onclick="accessTimeLockedSupport()">
+                <div style="font-size: 11px; color: #666666; font-weight: 800; text-transform: uppercase;">Customer Service</div>
+                <div style="font-size: 12px; color: #FF3B30; font-weight: bold; margin-top: 5px;">1:00 PM - 7:00 PM</div>
+            </div>
+            <div style="background-color: #121212; border: 1px solid #1c1c1c; border-radius: 12px; padding: 15px;">
+                <div style="font-size: 11px; color: #666666; font-weight: 800; text-transform: uppercase;">Network Guide</div>
+                <div style="font-size: 13px; color: #FFFFFF; font-weight: bold; margin-top: 5px;">Active Rules</div>
+            </div>
+        </div>
+
+        <!-- 🔗 REFERRAL MATRIX ENGINE AND TEAM RECORDS -->
+        <div style="background-color: #121212; border: 1px solid #1c1c1c; border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+            <div style="font-size: 11px; color: #666666; font-weight: 800; text-transform: uppercase; margin-bottom: 8px;">Referral Platform Link</div>
+            <div style="background-color:#080808; padding: 10px; border-radius:6px; font-size:12px; color:#FFF; font-family:monospace; word-break:break-all; border:1px solid #222;" id="display-referral-url">Generating node link...</div>
+            <div style="font-size: 12px; color: #888; font-weight: bold; margin-top: 8px;">Total Referred Nodes: <span id="client-referral-count" style="color:#FFF;">0</span></div>
+        </div>
+
+        <!-- 📢 BRAND NEW TELEGRAM CHANNEL BANNER INJECTED DIRECTLY UNDER REFERRAL ROW -->
+        <div style="background: linear-gradient(135deg, #161616, #090909); border: 1px solid #222222; border-radius: 14px; padding: 18px; margin-bottom: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.4);">
+            <div style="font-size: 10px; color: #888888; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">[ Official Telegram Node: DATA-SELLING-X ]</div>
+            <p style="font-size: 12px; color: #B5B5B5; line-height: 1.5; margin-bottom: 14px; text-align: justify;">Join our official channel now to claim daily free high-value gift codes, track real-time live network payout verifications, and grab instant updates on special bumper 5G data mining reward offers!</p>
+            <!-- 🚀 SYSTEM REDIRECTION ACTION NODE -->
+            <button class="action-withdraw-btn" style="background-color: #161616; color: #FFFFFF; border: 1px solid #333333; margin-top: 0;" onclick="window.open('https://t.me', '_blank')">Join Channel Now</button>
+        </div>
+
+        <!-- 🔥 8-NODE LIVE DYNAMIC SOCIAL PROOF VAULT FEED -->
+        <div style="background-color: #121212; border: 1px solid #1c1c1c; border-radius: 12px; padding: 15px;">
+            <div style="font-size: 11px; color: #666666; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.5px;">Live Payouts Matrix Feed</div>
+            <div id="live-social-proof-stream" style="min-height: 40px; font-size: 13px; font-weight: bold; color: #FFFFFF; display: flex; align-items: center; justify-content: center; transition: all 0.5s ease;">
+                Scanning global vault settlements...
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 📱 PROFESSIONAL FIXED NAVIGATION DECK FOOTER LAYER -->
+    <nav class="bottom-nav-bar">
+        <a href="/home.html" class="nav-item-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="/account.html" class="nav-item-link nav-active-node">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            <span>Account</span>
+        </a>
+    </nav>
+    <!-- ⚡ AUTOMATED COMPONENT DYNAMIC LOGIC MODULES -->
+    <script>
+        window.addEventListener('load', async () => {
+            await initializeAccountMetrics();
+            triggerLiveSocialProofEngine();
+        });
+
+        async function initializeAccountMetrics() {
+            try {
+                const res = await fetch('/api/user/profile');
+                const data = await res.json();
+                if(data.success) {
+                    // यूज़र प्रोफ़ाइल नोड और रैंडम यूनिक यूआईडी सेट करना
+                    document.getElementById('client-profile-name').innerText = data.user.fullName || "Active Operative";
+                    document.getElementById('client-profile-uid').innerText = `UID: ${data.user.uid}`;
+                    document.getElementById('client-wallet-balance').innerText = `\u20B9${data.user.balance.toFixed(2)}`;
+                    
+                    // लोकल मेमोरी से करेंट MB सेशन रीस्टोर करके दिखाना
+                    const savedMB = localStorage.getItem('cached_shared_mb') || "0.00";
+                    document.getElementById('client-total-mb').innerText = `${parseFloat(savedMB).toFixed(2)} MB`;
+                    
+                    // रेफ़रल डिटेल्स माउंट करना
+                    document.getElementById('display-referral-url').innerText = `${window.location.origin}/index.html?ref=${data.user.uid}`;
+                    document.getElementById('client-referral-count').innerText = data.user.referralCount || 0;
+                } else {
+                    window.location.href = '/index.html';
+                }
+            } catch(e) {}
+        }
+
+        // 🎟️ MULTI-USER REUSABLE VOUCHER REDEMPTION TRIGGER
+        async function executeVoucherRedemption() {
+            const token = document.getElementById('voucher-token-input').value.trim();
+            const msgEl = document.getElementById('voucher-telemetry-msg');
+            if(!token) return;
+
+            try {
+                const res = await fetch('/api/user/redeem-voucher', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ voucherCode: token })
+                });
+                const data = await res.json();
+                
+                if(data.success) {
+                    msgEl.style.color = "#00FFCC";
+                    msgEl.innerText = `\u2705 Success: ${data.message}`;
+                    document.getElementById('voucher-token-input').value = "";
+                    await initializeAccountMetrics(); // महा-वॉलेट लाइव अपडेट करना
+                } else {
+                    msgEl.style.color = "#FF3B30";
+                    msgEl.innerText = `\u274c Error: ${data.message}`;
+                }
+            } catch(e) {
+                msgEl.style.color = "#FF3B30";
+                msgEl.innerText = "Error: Voucher matrix sync timeout.";
+            }
+        }
+
+        // ⏱️ TIME-LOCKED CUSTOMER SERVICE GATEWAY CHECK (1:00 PM TO 7:00 PM ONLY)
+        function accessTimeLockedSupport() {
+            const now = new Date();
+            const hour = now.getHours();
+            
+            // दोपहर 1:00 (13:00) से शाम 7:00 (19:00) का कड़ा पहरा
+            if(hour >= 13 && hour < 19) {
+                window.location.href = '/support.html';
+            } else {
+                alert("❌ SECURITY LOCK: Support window is only live from 1:00 PM to 7:00 PM daily. Please contact during operating hours.");
+            }
+        }
+
+        // 🔥 8-NODE DYNAMIC SOCIAL PROOF PRODUCER ENGINE
+        function triggerLiveSocialProofEngine() {
+            const streamEl = document.getElementById('live-social-proof-stream');
+            
+            // ८ कड़क वीआईपी ट्रांजैक्शन रिकॉर्ड्स का एरे (₹150 और ₹500 का लाइव मिश्रण)
+            const fakeNodes = [
+                "🔥 @7054XXXXXX just withdrew \u20B9150.00 successfully via UPI!",
+                "🔥 @9835XXXXXX just withdrew \u20B9500.00 successfully via BANK!",
+                "🔥 @8147XXXXXX just withdrew \u20B9150.00 successfully via UPI!",
+                "🔥 @6389XXXXXX just withdrew \u20B9500.00 successfully via UPI!",
+                "🔥 @7352XXXXXX just withdrew \u20B9150.00 successfully via BANK!",
+                "🔥 @9140XXXXXX just withdrew \u20B9500.00 successfully via UPI!",
+                "🔥 @8789XXXXXX just withdrew \u20B9150.00 successfully via UPI!",
+                "🔥 @7007XXXXXX just withdrew \u20B9500.00 successfully via BANK!"
+            ];
+            
+            let idx = 0;
+            setInterval(() => {
+                streamEl.style.opacity = 0;
+                setTimeout(() => {
+                    streamEl.innerText = fakeNodes[idx];
+                    streamEl.style.opacity = 1;
+                    idx = (idx + 1) % fakeNodes.length;
+                }, 400);
+            }, 5000); // हर 5 सेकंड में नया असली सोशल प्रूफ लाइव फ्लैश होगा
+        }
+    </script>
+</body>
+</html>
