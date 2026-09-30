@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA-SELLING-X WITHDRAWAL</title>
+    <style>
+        /* 🌌 ULTIMATE CYBERPUNK MATTE BLACK & GHOST WHITE INFRASTRUCTURE */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #080808; color: #F5F5F5; overflow-x: hidden; padding-bottom: 50px; }
+        .app-container { padding: 15px; max-width: 480px; margin: 0 auto; }
+        
+        /* 👑 BACK-ARROW & MAIN HEADER NAVIGATION NODE */
+        .header-nav-node { display: flex; align-items: center; justify-content: space-between; padding: 15px 5px; margin-bottom: 10px; }
+        .back-matrix-btn { background: none; border: none; color: #FFFFFF; font-size: 20px; cursor: pointer; font-weight: bold; }
+        .header-nav-title { font-size: 16px; font-weight: 900; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* 📊 TOP WALLET BALANCE BALANCE CARD LAYER */
+        .available-balance-box {
+            background: linear-gradient(135deg, #161616, #0d0d0d); border: 1px solid #222222;
+            border-radius: 14px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+        .balance-box-label { font-size: 11px; font-weight: bold; color: #666666; text-transform: uppercase; letter-spacing: 0.8px; }
+        .balance-box-val { font-size: 30px; font-weight: 900; color: #FFFFFF; margin-top: 5px; }
+
+        /* 🚫 TWO CLEAN CHANNELS GRID GRID (USDT EXCLUDED) */
+        .payment-channel-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+        .channel-select-card {
+            background-color: #121212; border: 1px solid #1c1c1c; border-radius: 12px;
+            padding: 16px; text-align: center; cursor: pointer; transition: all 0.2s ease;
+        }
+        .channel-select-card.active-node { border-color: #FFFFFF; box-shadow: 0 0 12px rgba(255,255,255,0.1); }
+        .channel-title { font-size: 12px; font-weight: 900; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 5px; }
+        
+        /* 📥 DYNAMIC INTERFACE INPUT DECK */
+        .destination-vault-card { background-color: #121212; border: 1px solid #1c1c1c; border-radius: 12px; padding: 16px; margin-bottom: 20px; }
+        .vault-action-trigger {
+            border: 2px dashed #222222; border-radius: 8px; padding: 15px; text-align: center;
+            font-size: 13px; color: #888888; font-weight: bold; cursor: pointer; text-transform: uppercase;
+        }
+        .vault-input-group { margin-top: 10px; }
+        .vault-input-group input {
+            width: 100%; padding: 12px; background-color: #080808; border: 1px solid #222222;
+            border-radius: 8px; color: #FFFFFF; font-size: 14px; outline: none; margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- 👑 BACKWARD REDIRECTION ROUTER NAVIGATION HEADER -->
+        <div class="header-nav-node">
+            <button class="back-matrix-btn" onclick="window.location.href='/account.html'">&#8592;</button>
+            <div class="header-nav-title">Withdraw Portal</div>
+            <div style="width:20px;"></div>
+        </div>
+
+        <!-- 📊 TOP LIVE AVAILABLE REVENUE LEDGER MATRIX -->
+        <div class="available-balance-box">
+            <div class="balance-box-label">Available Balance</div>
+            <div class="balance-box-val" id="withdraw-available-ledger">₹0.00</div>
+        </div>
+
+        <!-- 🚫 STRICT EXCLUSION OF USDT PIPELINE GRID -->
+        <div class="payment-channel-row">
+            <div class="channel-select-card active-node" id="channel-upi-tab" onclick="switchWithdrawChannel('upi')">
+                <div style="font-size:20px;">💳</div>
+                <div class="channel-title">UPI ID Node</div>
+            </div>
+            <div class="channel-select-card" id="channel-bank-tab" onclick="switchWithdrawChannel('bank')">
+                <div style="font-size:20px;">🏛️</div>
+                <div class="channel-title">Bank Card Node</div>
+            </div>
+        </div>
+
+        <!-- 📥 DYNAMIC ADAPTIVE REGISTER LINK INTERFACE -->
+        <div class="destination-vault-card">
+            <div class="vault-action-trigger" id="destination-placeholder-btn" onclick="revealDestinationInputDeck()">+ Bind Payout Address</div>
+            
+            <div class="vault-input-group hidden" id="destination-input-fields">
+                <input type="text" id="target-payment-address" placeholder="Enter your valid UPI ID or Bank Account No">
+                <input type="text" id="target-bank-ifsc" placeholder="Enter Bank IFSC Code (Only for Bank Account)" class="hidden">
+                <button style="width:100%; padding:10px; background-color:#161616; color:#FFF; border:1px solid #333; font-size:12px; font-weight:bold; text-transform:uppercase; border-radius:6px; cursor:pointer;" onclick="savePayoutDestinationNode()">Lock Destination Node</button>
+            </div>
+            <div style="font-size: 13px; font-weight: bold; color: #00FFCC; text-align: center; margin-top: 5px;" id="bound-address-display"></div>
+        </div>
+
+        <!-- 💸 LIVE QUANTITY METRIC PANEL WITH FIXED ₹6 GST COMPUTATION -->
+        <div class="destination-vault-card">
+            <div style="margin-bottom: 12px;">
+                <label style="display:block; font-size:11px; color:#888; font-weight:bold; text-transform:uppercase; margin-bottom:6px;">Please Enter Request Amount</label>
+                <input type="number" id="withdraw-amount-quantum" placeholder="Minimum threshold rules apply" style="width:100%; padding:13px; background-color:#080808; border:1px solid #222; border-radius:8px; color:#FFF; font-size:16px; outline:none;" oninput="computeLiveGstDeduction()">
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:12px; font-weight:bold; color:#666; text-transform:uppercase; padding-top:5px;">
+                <span>Withdrawal Amount Received</span>
+                <span style="color:#FFFFFF;" id="live-net-payout-received">₹0.00</span>
+            </div>
+            <button style="width:100%; padding:15px; background-color:#FFFFFF; color:#000000; border:none; border-radius:10px; font-size:14px; font-weight:900; text-transform:uppercase; margin-top:15px; letter-spacing:1px; cursor:pointer;" onclick="dispatchWithdrawalRequest()">Confirm Safe Cashout</button>
+            <div style="text-align:center; font-size:13px; font-weight:bold; color:#FF3B30; margin-top:10px;" id="withdraw-telemetry-error"></div>
+        </div>
+
+        <!-- 🔒 VIP ENGLISH CORE OPERATIVE POLICY RULES -->
+        <ul style="padding-left:18px; font-size:11px; line-height:1.6; color:#555; font-weight:600; text-transform:uppercase; letter-spacing:0.3px;">
+            <li style="margin-bottom:6px; color:#666;">📌 Node Policy 1: First-time tactical withdrawal threshold is locked at minimum <span style="color:#888;">₹50.00</span> only.</li>
+            <li style="margin-bottom:6px;">📌 Node Policy 2: Subsequent global withdrawal levels are locked at minimum <span style="color:#888;">₹100.00</span> network scale.</li>
+            <li style="margin-bottom:6px;">📌 Node Policy 3: An absolute fixed gateway fee of <span style="color:#888;">₹6.00</span> (Network GST Load) is auto-deducted from each transaction event.</li>
+        </ul>
+
+    </div>
+    <!-- ⚡ SYSTEM TRANSACTION DATA GATEWAY CONTROLLERS -->
+    <script>
+        let selectedChannel = 'upi';
+        let isAddressBound = false;
+        let finalBoundAddress = "";
+        let isFirstWithdrawalNode = true;
+
+        window.addEventListener('load', async () => {
+            await synchronizeWithdrawMetrics();
+        });
+
+        async function synchronizeWithdrawMetrics() {
+            try {
+                const res = await fetch('/api/user/profile');
+                const data = await res.json();
+                if(data.success) {
+                    document.getElementById('withdraw-available-ledger').innerText = `\u20B9${data.user.balance.toFixed(2)}`;
+                    isFirstWithdrawalNode = data.user.isFirstWithdraw;
+                    
+                    // अगर पहले से डेटाबेस में एड्रेस सेव है तो दिखाना
+                    if(data.user.boundAddress) {
+                        isAddressBound = true;
+                        finalBoundAddress = data.user.boundAddress;
+                        document.getElementById('destination-placeholder-btn').classList.add('hidden');
+                        document.getElementById('bound-address-display').innerText = `\u2705 Bound Destination: ${finalBoundAddress}`;
+                    }
+                } else {
+                    window.location.href = '/index.html';
+                }
+            } catch(e) {}
+        }
+
+        function switchWithdrawChannel(type) {
+            selectedChannel = type;
+            document.getElementById('channel-upi-tab').classList.remove('active-node');
+            document.getElementById('channel-bank-tab').classList.remove('active-node');
+            document.getElementById('target-bank-ifsc').classList.add('hidden');
+            
+            if(type === 'upi') {
+                document.getElementById('channel-upi-tab').classList.add('active-node');
+                document.getElementById('target-payment-address').placeholder = "Enter your valid UPI ID Node";
+            } else {
+                document.getElementById('channel-bank-tab').classList.add('active-node');
+                document.getElementById('target-payment-address').placeholder = "Enter Bank Account Number";
+                document.getElementById('target-bank-ifsc').classList.remove('hidden');
+            }
+        }
+
+        function revealDestinationInputDeck() {
+            document.getElementById('destination-placeholder-btn').classList.add('hidden');
+            document.getElementById('destination-input-fields').classList.remove('hidden');
+        }
+
+        function savePayoutDestinationNode() {
+            const address = document.getElementById('target-payment-address').value.trim();
+            const ifsc = document.getElementById('target-bank-ifsc').value.trim();
+            const errorEl = document.getElementById('withdraw-telemetry-error');
+            
+            if(!address) return;
+            
+            finalBoundAddress = selectedChannel === 'bank' ? `${address} (IFSC: ${ifsc})` : address;
+            isAddressBound = true;
+            
+            document.getElementById('destination-input-fields').classList.add('hidden');
+            document.getElementById('bound-address-display').innerText = `\u2705 Bound Destination: ${finalBoundAddress}`;
+            errorEl.innerText = "";
+        }
+
+        // 💸 LIVE GST CALCULATION (ऑटोमैटिक ₹6 की लाइव कटौती)
+        function computeLiveGstDeduction() {
+            const rawAmount = parseFloat(document.getElementById('withdraw-amount-quantum').value);
+            const netDisplay = document.getElementById('live-net-payout-received');
+            
+            if(isNaN(rawAmount) || rawAmount <= 6) {
+                netDisplay.innerText = "₹0.00";
+                return;
+            }
+            
+            // यूज़र के डालते ही लाइव स्क्रीन पर ₹6 काटकर दिखाना
+            const finalPayable = rawAmount - 6.00;
+            netDisplay.innerText = `\u20B9${finalPayable.toFixed(2)}`;
+        }
+
+        async function dispatchWithdrawalRequest() {
+            const rawAmount = parseFloat(document.getElementById('withdraw-amount-quantum').value);
+            const errorEl = document.getElementById('withdraw-telemetry-error');
+            
+            if(!isAddressBound) {
+                errorEl.innerText = "Error: Payout destination address node is not bound!";
+                return;
+            }
+            if(isNaN(rawAmount)) {
+                errorEl.innerText = "Error: Please specify a valid amount format!";
+                return;
+            }
+
+            // 🔒 फर्स्ट-टाइम और VIP लिमिट फिल्टर की कड़ाई से जांच
+            let minLimit = isFirstWithdrawalNode ? 50.00 : 100.00;
+            if(rawAmount < minLimit) {
+                errorEl.innerText = `❌ Policy Violation: Minimum threshold limit is ₹${minLimit}!`;
+                return;
+            }
+
+            try {
+                errorEl.style.color = "#888888";
+                errorEl.innerText = "Transmitting settlement packet to vault...";
+                
+                const res = await fetch('/api/user/withdraw', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ amount: rawAmount, channel: selectedChannel, targetAddress: finalBoundAddress })
+                });
+                const data = await res.json();
+                
+                if(data.success) {
+                    errorEl.innerText = "";
+                    // विथड्रॉल सबमिट होते ही बिना किसी अलर्ट के सीधे नया स्वतंत्र रसीद पन्ना खोलना
+                    window.location.href = `/receipt.html?orderId=${data.orderId}`;
+                } else {
+                    errorEl.style.color = "#FF3B30";
+                    errorEl.innerText = `Error: ${data.message}`;
+                }
+            } catch(e) {
+                errorEl.style.color = "#FF3B30";
+                errorEl.innerText = "Network Error: Settlement injection timeout.";
+            }
+        }
+    </script>
+</body>
+</html>
