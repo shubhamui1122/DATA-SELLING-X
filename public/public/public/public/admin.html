@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NET-MATRIX WORKER GATEWAY</title>
+    <style>
+        /* 🌌 ULTIMATE CYBERPUNK MATTE BLACK & GHOST WHITE INFRASTRUCTURE */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #080808; color: #F5F5F5; overflow-x: hidden; padding-bottom: 90px; }
+        .app-container { padding: 15px; max-width: 500px; margin: 0 auto; }
+        
+        /* ⚡ WORKER GATEWAY CRIMSON TERMINAL WARNING NODE */
+        .gateway-warning-banner {
+            background-color: #0d0d0d; border: 1px solid #FF3B30; border-radius: 12px;
+            padding: 18px; margin-bottom: 20px; text-align: center;
+            box-shadow: 0 0 20px rgba(255, 59, 48, 0.2);
+        }
+        .gateway-warning-banner h1 { font-size: 16px; font-weight: 900; color: #FF3B30; letter-spacing: 1.5px; text-transform: uppercase; }
+        .gateway-warning-banner p { font-size: 10px; color: #666666; margin-top: 4px; font-weight: bold; text-transform: uppercase; }
+
+        /* ⏱️ SUB-ADMIN LIVE SHIFT TIMER BOX */
+        .worker-timer-box {
+            background-color: #121212; border: 1px solid #1c1c1c; border-radius: 12px;
+            padding: 14px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;
+        }
+        .timer-label { font-size: 11px; font-weight: 800; color: #888888; text-transform: uppercase; letter-spacing: 0.5px; }
+        .timer-countdown { font-size: 14px; font-weight: 900; color: #FFFFFF; font-family: monospace; }
+
+        /* INTERFACE CARDS & OPERATIONS RACK */
+        .admin-action-card { background-color: #121212; border: 1px solid #1c1c1c; border-radius: 14px; padding: 20px; margin-bottom: 20px; }
+        .admin-action-card h3 { font-size: 13px; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 15px; font-weight: 800; }
+        
+        .admin-input-field {
+            width: 100%; padding: 12px; background-color: #080808; border: 1px solid #222222;
+            border-radius: 8px; color: #FFFFFF; font-size: 14px; outline: none; margin-bottom: 12px;
+        }
+        .admin-input-field:focus { border-color: #FFFFFF; }
+        
+        .admin-trigger-btn {
+            width: 100%; padding: 13px; background-color: #FFFFFF; color: #000000;
+            border: none; border-radius: 8px; font-size: 13px; font-weight: 900;
+            text-transform: uppercase; cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s ease;
+        }
+        .admin-trigger-btn:active { transform: scale(0.98); }
+        .telemetry-log-text { font-size: 11px; font-weight: bold; text-align: center; margin-top: 8px; }
+
+        /* 📱 BOTTOM SIDE FIXED NAVIGATION DECK (ALL USER TRACK BUTTON INTEGRATED) */
+        .admin-bottom-nav {
+            position: fixed; bottom: 0; left: 0; width: 100%; background-color: #121212;
+            border-top: 1px solid #1c1c1c; display: flex; justify-content: space-around;
+            padding: 12px 0; z-index: 100;
+        }
+        .admin-nav-item {
+            background: none; border: none; color: #666666; display: flex; flex-direction: column;
+            align-items: center; gap: 4px; font-size: 10px; font-weight: 900; text-transform: uppercase; cursor: pointer; outline: none;
+        }
+        .admin-nav-item svg { width: 22px; height: 22px; fill: #666666; }
+        .admin-nav-active { color: #FFFFFF !important; }
+        .admin-nav-active svg { fill: #FFFFFF !important; }
+    </style>
+</head>
+<body>
+    <!-- 👥 WORKER GATEWAY APP STRUCTURE INTERFACE -->
+    <div class="app-container" id="admin-main-view">
+        
+        <!-- ⚡ TERMINAL ENTRY INTEL BANNER -->
+        <div class="gateway-warning-banner">
+            <h1>Worker Gateway: Only Active Workers Allowed</h1>
+            <p>Unauthorized network breach requests are monitored</p>
+        </div>
+
+        <!-- ⏱️ SECURITY TRACKER: SUB-ADMIN LIVE SHIFT TIMER ACTIVE -->
+        <div class="worker-timer-box">
+            <span class="timer-label">🔒 Duty Active Timer</span>
+            <span class="timer-countdown" id="worker-shift-timer">00:00:00</span>
+        </div>
+
+        <!-- 📢 SUB-BROADCAST ROUTER (workers announcement engine) -->
+        <div class="admin-action-card" id="section-broadcast-panel">
+            <h3>Broadcast Router Announcement</h3>
+            <input type="text" id="admin-broadcast-string" class="admin-input-field" placeholder="Type new ticker announcement message here...">
+            <button class="admin-trigger-btn" onclick="transmitAdminBroadcast()">Deploy Broadcast Packet</button>
+            <div class="telemetry-log-text" id="broadcast-telemetry-response"></div>
+        </div>
+
+        <!-- 🔑 CLIENT PASSWORD OVERRIDE DESK Component -->
+        <div class="admin-action-card" id="section-override-panel">
+            <h3>Client Password Override Desk</h3>
+            <input type="tel" id="override-client-phone" class="admin-input-field" placeholder="Target Mobile Number Node">
+            <input type="password" id="override-client-pin" class="admin-input-field" placeholder="Assign New Password PIN">
+            <button class="admin-trigger-btn" onclick="executePasswordOverride()">Inject Password Reset</button>
+            <div class="telemetry-log-text" id="override-telemetry-response"></div>
+        </div>
+
+        <!-- 📡 ALL USER TRACK INTEL DESK (Hidden by default, triggered from bottom tab) -->
+        <div class="admin-action-card hidden" id="section-spy-track-panel">
+            <h3>All User Track Intelligence Desk</h3>
+            <div style="display:flex; gap:8px; margin-bottom:15px;">
+                <input type="text" id="spy-search-query-node" style="margin-bottom:0;" class="admin-input-field" placeholder="Enter Client UID or Order ID">
+                <button style="padding:0 15px; background-color:#FFF; border:none; border-radius:8px; font-size:12px; font-weight:900; text-transform:uppercase; cursor:pointer;" onclick="executeUserSpySearch()">Search</button>
+            </div>
+            
+            <!-- LIVE INTEL RECORDS CARD DISPLAY -->
+            <div style="background-color:#080808; padding:15px; border-radius:8px; font-size:12px; line-height:1.6; border:1px solid #1c1c1c; display:none;" id="spy-records-display-card">
+                <!-- Data injected dynamically via the backend vault mapping scripts -->
+            </div>
+            <div class="telemetry-log-text" id="spy-telemetry-response"></div>
+        </div>
+
+    </div>
+
+    <!-- 📱 FIXED BOTTOM SIDE DASHBOARD NAVIGATION CONTROLS -->
+    <nav class="admin-bottom-nav">
+        <button class="admin-nav-item admin-nav-active" id="nav-btn-workdesk" onclick="switchAdminWorkspace('workdesk')">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c0 1.1.9-2 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            <span>WorkDesk</span>
+        </button>
+        <!-- 🔑 THE PRECISE BOTTOM SIDE SEARCH REMOTES INTEGRATED HERE -->
+        <button class="admin-nav-item" id="nav-btn-spytrack" onclick="switchAdminWorkspace('spytrack')">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <span>All User Track</span>
+        </button>
+    </nav>
+    <!-- ⚡ AUTOMATED WORKER DATA INJECTION CONTROLLERS -->
+    <script>
+        let shiftSeconds = 0;
+        
+        // ⏱️ AUTOMATED RUNTIME TIMER ENGINE FOR WORKERS SHIFT TRACKING
+        window.addEventListener('load', () => {
+            setInterval(() => {
+                shiftSeconds++;
+                const hrs = String(Math.floor(shiftSeconds / 3600)).padStart(2, '0');
+                const mins = String(Math.floor((shiftSeconds % 3600) / 60)).padStart(2, '0');
+                const secs = String(shiftSeconds % 60).padStart(2, '0');
+                document.getElementById('worker-shift-timer').innerText = `${hrs}:${mins}:${secs}`;
+            }, 1000);
+        });
+
+        function switchAdminWorkspace(targetTab) {
+            document.getElementById('nav-btn-workdesk').classList.remove('admin-nav-active');
+            document.getElementById('nav-btn-spytrack').classList.remove('admin-nav-active');
+            
+            if(targetTab === 'workdesk') {
+                document.getElementById('nav-btn-workdesk').classList.add('admin-nav-active');
+                document.getElementById('section-broadcast-panel').classList.remove('hidden');
+                document.getElementById('section-override-panel').classList.remove('hidden');
+                document.getElementById('section-spy-track-panel').classList.add('hidden');
+            } else {
+                document.getElementById('nav-btn-spytrack').classList.add('admin-nav-active');
+                document.getElementById('section-broadcast-panel').classList.add('hidden');
+                document.getElementById('section-override-panel').classList.add('hidden');
+                document.getElementById('section-spy-track-panel').classList.remove('hidden');
+            }
+        }
+
+        async function transmitAdminBroadcast() {
+            const str = document.getElementById('admin-broadcast-string').value.trim();
+            const respEl = document.getElementById('broadcast-telemetry-response');
+            if(!str) return;
+
+            try {
+                const res = await fetch('/api/admin/broadcast', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: str })
+                });
+                const data = await res.json();
+                if(data.success) {
+                    respEl.style.color = "#00FFCC";
+                    respEl.innerText = "\u2705 Broadcast live ticker deployment successful!";
+                    document.getElementById('admin-broadcast-string').value = "";
+                }
+            } catch(e) {}
+        }
+
+        async function executePasswordOverride() {
+            const phone = document.getElementById('override-client-phone').value.trim();
+            const newPin = document.getElementById('override-client-pin').value.trim();
+            const respEl = document.getElementById('override-telemetry-response');
+            
+            if(!phone || !newPin) return;
+
+            try {
+                const res = await fetch('/api/admin/override-password', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: phone, newPassword: newPin })
+                });
+                const data = await res.json();
+                if(data.success) {
+                    respEl.style.color = "#00FFCC";
+                    respEl.innerText = `\u2705 Success: Password updated successfully via override engine.`;
+                    document.getElementById('override-client-phone').value = "";
+                    document.getElementById('override-client-pin').value = "";
+                } else {
+                    respEl.style.color = "#FF3B30";
+                    respEl.innerText = `Error: ${data.message}`;
+                }
+            } catch(e) {}
+        }
+
+        // 📡 ALL USER TRACK ADVANCED INTEL ENGINE (UID OR ORDER ID SCANNER)
+        async function executeUserSpySearch() {
+            const query = document.getElementById('spy-search-query-node').value.trim();
+            const respEl = document.getElementById('spy-telemetry-response');
+            const displayCard = document.getElementById('spy-records-display-card');
+            
+            if(!query) return;
+            respEl.innerText = "Scanning network vaults...";
+            displayCard.style.display = "none";
+
+            try {
+                const res = await fetch(`/api/admin/spy-user?query=${query}`);
+                const data = await res.json();
+                
+                if(data.success) {
+                    respEl.innerText = "";
+                    displayCard.style.display = "block";
+                    
+                    // यूज़र की कुंडली रेंडर करना (नाम, नंबर, डेटा, विथड्रॉल इतिहास, रेफरल)
+                    displayCard.innerHTML = `
+                        <div style="color:#00FFCC; font-weight:800; border-bottom:1px solid #222; padding-bottom:5px; margin-bottom:8px; text-transform:uppercase;">Node Data Record Detected</div>
+                        <div>👤 <b>Operative Name:</b> ${data.user.fullName}</div>
+                        <div>📱 <b>Mobile Node:</b> ${data.user.username}</div>
+                        <div>🆔 <b>Unique UID:</b> ${data.user.uid}</div>
+                        <div>📊 <b>Current Balance:</b> \u20B9${data.user.balance.toFixed(2)}</div>
+                        <div>📡 <b>Total Referred Nodes:</b> ${data.user.referralCount || 0}</div>
+                        <div style="margin-top:5px; color:#888; font-size:11px;">🔍 TRANSACTION LOOKUP LOG INDEX REGISTERED ON PERMANENT VAULT.</div>
+                    `;
+                } else {
+                    respEl.style.color = "#FF3B30";
+                    respEl.innerText = `❌ Node Search Failed: ${data.message}`;
+                }
+            } catch(e) {
+                respEl.style.color = "#FF3B30";
+                respEl.innerText = "Error: Database synchronization failure.";
+            }
+        }
+    </script>
+</body>
+</html>
