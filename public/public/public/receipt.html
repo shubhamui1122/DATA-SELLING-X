@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA-SELLING-X RECEIPT</title>
+    <style>
+        /* 🌌 ULTIMATE CYBERPUNK MATTE BLACK & GHOST WHITE INFRASTRUCTURE */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #080808; color: #F5F5F5; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        .app-container { padding: 15px; width: 100%; max-width: 450px; margin: 0 auto; }
+        
+        /* 📄 VIP TRANSACTION INVOICE RACK */
+        .invoice-box-card {
+            background-color: #121212; border: 1px solid #1c1c1c; border-radius: 16px;
+            padding: 30px 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.8); position: relative;
+        }
+        
+        /* 🚦 3-STATE DYNAMIC LIVE STATUS BADGES (PENDING / SUCCESSFUL / REJECTED) */
+        .status-badge-vertex {
+            padding: 8px 18px; border-radius: 6px; font-size: 13px; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 25px;
+        }
+        .state-pending { background-color: rgba(212, 175, 55, 0.1); color: #D4AF37; border: 1px solid #D4AF37; box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+        .state-successful { background-color: rgba(0, 255, 204, 0.1); color: #00FFCC; border: 1px solid #00FFCC; box-shadow: 0 0 10px rgba(0, 255, 204, 0.2); }
+        .state-rejected { background-color: rgba(255, 59, 48, 0.1); color: #FF3B30; border: 1px solid #FF3B30; box-shadow: 0 0 10px rgba(255, 59, 48, 0.2); }
+
+        /* 🆔 ORDER ID METRIC LAYERS */
+        .order-id-label { font-size: 12px; color: #666666; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+        .order-id-token { font-size: 22px; font-weight: 900; color: #FFFFFF; margin-top: 4px; font-family: monospace; letter-spacing: 0.5px; }
+        
+        .divider-mesh-line { border-top: 1px dashed #222222; margin: 20px 0; }
+        
+        /* 💸 DETAILED BREAKDOWN VALUES */
+        .ledger-row-node { display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 13px; font-weight: bold; text-transform: uppercase; }
+        .ledger-label-context { color: #888888; letter-spacing: 0.5px; }
+        .ledger-value-context { color: #FFFFFF; }
+        
+        .payout-destination-card { background-color: #080808; border: 1px solid #1c1c1c; border-radius: 8px; padding: 12px; margin-top: 15px; word-break: break-all; }
+        .destination-title { font-size: 10px; font-weight: 900; color: #666666; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px; }
+        .destination-addr-string { font-size: 13px; font-weight: bold; color: #FFFFFF; font-family: monospace; }
+        
+        /* MASTER RETURN INTERACTION BUTTON */
+        .return-portal-btn {
+            width: 100%; padding: 14px; background-color: #FFFFFF; color: #000000;
+            border: none; border-radius: 8px; font-size: 13px; font-weight: 900;
+            text-transform: uppercase; cursor: pointer; letter-spacing: 1px; margin-top: 25px; transition: all 0.2s ease;
+        }
+        .return-portal-btn:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="invoice-box-card" style="text-align: center;">
+            
+            <!-- 🚦 INTERACTIVE LIVE 3-STATE GATEWAY SIGNAL BADGE -->
+            <div class="status-badge-vertex state-pending" id="invoice-live-status">STATUS: PENDING</div>
+            
+            <div style="text-align: left; padding: 0 5px;">
+                <!-- 🆔 UNIQUE ORDER IDENTIFICATION TOKEN DISPLAY -->
+                <div class="order-id-label">Transaction Settlement ID</div>
+                <div class="order-id-token" id="invoice-order-id-node">#WDX-XXXXXX</div>
+                
+                <div class="divider-mesh-line"></div>
+                
+                <!-- 💸 DETAILED CASH FLOW TELEMETRY METRICS -->
+                <div class="ledger-row-node">
+                    <span class="ledger-label-context">Requested Quantum</span>
+                    <span class="ledger-value-context" id="invoice-raw-amount">₹0.00</span>
+                </div>
+                <div class="ledger-row-node">
+                    <span class="ledger-label-context">Network GST Load</span>
+                    <span class="ledger-value-context" style="color: #FF3B30;" id="invoice-gst-deduction">-₹6.00</span>
+                </div>
+                
+                <div class="divider-mesh-line" style="margin: 15px 0;"></div>
+                
+                <div class="ledger-row-node" style="font-size: 15px; margin-bottom: 5px;">
+                    <span class="ledger-label-context" style="color: #FFFFFF; font-weight: 800;">Final Payable Net</span>
+                    <span class="ledger-value-context" style="color: #00FFCC; font-weight: 900;" id="invoice-final-payable">₹0.00</span>
+                </div>
+                
+                <!-- 📌 DESTINATION TERMINAL ROUTING INTERFACE -->
+                <div class="payout-destination-card">
+                    <div class="destination-title">Bound Destination Node</div>
+                    <div class="destination-addr-string" id="invoice-target-destination">Scanning parameters...</div>
+                </div>
+            </div>
+
+            <!-- MASTER NAVIGATION RETURN ACTION -->
+            <button class="return-portal-btn" onclick="window.location.href='/account.html'">Return To Profile Dashboard</button>
+        </div>
+    </div>
+    <!-- ⚡ AUTOMATED REAL-TIME SYNCHRONIZATION RUNTIME SCRIPTS -->
+    <script>
+        let pollingInterval = null;
+        let targetedOrderId = "";
+
+        window.addEventListener('load', () => {
+            // URL पैरामीटर से ऑर्डर आईडी एक्सट्रेक्ट करना
+            const urlParams = new URLSearchParams(window.location.search);
+            targetedOrderId = urlParams.get('orderId');
+            
+            if(!targetedOrderId) {
+                window.location.href = '/account.html';
+                return;
+            }
+
+            document.getElementById('invoice-order-id-node').innerText = `#${targetedOrderId}`;
+            
+            // डेटाबेस सिंक करने के लिए पहला पोलिंग फेच ट्रिगर करना
+            synchronizeInvoiceState();
+            
+            // 🔄 हर 4 सेकंड में ओनर पैनल के Action (Success/Reject) को लाइव ट्रैक करना
+            pollingInterval = setInterval(synchronizeInvoiceState, 4000);
+        });
+
+        async function synchronizeInvoiceState() {
+            if(!targetedOrderId) return;
+
+            try {
+                const res = await fetch(`/api/user/withdraw-status?orderId=${targetedOrderId}`);
+                const data = await res.json();
+                
+                if(data.success) {
+                    const tx = data.transaction;
+                    
+                    // पैसे का पूरा लाइव गणित सेट करना (₹6 GST लाइव माइनस करके दिखाना)
+                    document.getElementById('invoice-raw-amount').innerText = `\u20B9${tx.amount.toFixed(2)}`;
+                    document.getElementById('invoice-final-payable').innerText = `\u20B9${(tx.amount - 6.00).toFixed(2)}`;
+                    document.getElementById('invoice-target-destination').innerText = tx.targetAddress;
+
+                    // 🚦 3-STATE LIVE REAL-TIME RADAR ENGINE (PENDING -> SUCCESSFUL / REJECTED)
+                    const statusBadge = document.getElementById('invoice-live-status');
+                    statusBadge.className = "status-badge-vertex"; // क्लास रीसेट करना
+
+                    if(tx.status === 'pending') {
+                        statusBadge.classList.add('state-pending');
+                        statusBadge.innerText = "STATUS: PENDING";
+                    } else if(tx.status === 'successful') {
+                        statusBadge.classList.add('state-successful');
+                        statusBadge.innerText = "STATUS: SUCCESSFUL";
+                        clearInterval(pollingInterval); // सक्सेस होते ही पोलिंग स्टॉप करना
+                    } else if(tx.status === 'rejected') {
+                        statusBadge.classList.add('state-rejected');
+                        statusBadge.innerText = "STATUS: REJECTED";
+                        clearInterval(pollingInterval); // रिजेक्ट होते ही पोलिंग स्टॉप करना
+                    }
+                } else {
+                    clearInterval(pollingInterval);
+                    window.location.href = '/account.html';
+                }
+            } catch(e) {}
+        }
+    </script>
+</body>
+</html>
