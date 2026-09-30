@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA-SELLING-X CORE</title>
+    <style>
+        /* 🌌 CYBERPUNK MATTE BLACK & GHOST WHITE PREMIUM INTERFACE STYLES */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #080808; color: #F5F5F5; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        
+        /* 👑 INTEGRATED BRAND HEADER INTERACTIVE LOGO VERTEX */
+        .brand-logo-container { text-align: center; padding: 20px 15px 5px 15px; }
+        .brand-neon-shield {
+            width: 130px; height: 130px; border-radius: 50%;
+            border: 2px solid #161616; background-color: #0d0d0d;
+            box-shadow: 0 0 25px rgba(0, 168, 255, 0.35);
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 42px; font-weight: 900; color: #FFFFFF;
+            letter-spacing: -2px; text-shadow: 0 0 15px rgba(0, 168, 255, 0.8);
+        }
+        .brand-title { font-size: 22px; font-weight: 900; color: #FFFFFF; letter-spacing: 2px; margin-top: 12px; text-transform: uppercase; }
+        
+        /* 🔒 APPARATUS LAYER & SECURE ENTRY PORTAL CARD */
+        .app-container { padding: 15px; width: 100%; max-width: 440px; margin: 0 auto; }
+        .auth-card { 
+            background-color: #121212; border: 1px solid #1c1c1c; 
+            border-radius: 16px; padding: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.8); 
+        }
+        .auth-card h2 { font-size: 16px; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 22px; text-align: center; font-weight: 800; }
+        
+        /* FORM FIELD INFRASTRUCTURE */
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 6px; font-size: 11px; color: #888888; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; }
+        .form-group input { 
+            width: 100%; padding: 13px 14px; background-color: #080808; border: 1px solid #222222; 
+            border-radius: 8px; color: #FFFFFF; font-size: 15px; outline: none; transition: all 0.25s ease; 
+        }
+        .form-group input:focus { border-color: #FFFFFF; box-shadow: 0 0 8px rgba(255,255,255,0.12); }
+        
+        /* PREMIUM ACTIONS & INTERACTION TRIGGERS */
+        .master-action-btn { 
+            width: 100%; padding: 15px; background-color: #FFFFFF; color: #000000; 
+            border: none; border-radius: 8px; font-size: 14px; font-weight: 900; 
+            text-transform: uppercase; cursor: pointer; transition: all 0.2s ease; letter-spacing: 1.2px; margin-top: 8px;
+        }
+        .master-action-btn:active { transform: scale(0.98); background-color: #E5E5E5; }
+        
+        .switch-context-log { text-align: center; font-size: 13px; color: #666666; margin-top: 18px; }
+        .switch-action-trigger { color: #FFFFFF; text-decoration: none; font-weight: 800; cursor: pointer; }
+        .switch-action-trigger:hover { text-decoration: underline; }
+        
+        /* ⏱️ TIME-LOCKED SUPPORT REDIRECTION PARAMETERS */
+        .time-locked-forgot-trigger { display: block; text-align: center; font-size: 12px; color: #888888; margin-top: 18px; text-decoration: none; font-weight: 600; letter-spacing: 0.3px; }
+        .time-locked-forgot-trigger:hover { color: #FFFFFF; }
+        
+        .telemetry-error-node { text-align: center; font-size: 13px; font-weight: bold; color: #FF3B30; margin-top: 12px; min-height: 18px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <!-- 👑 CORE AUTHENTICATION LANDING ENGINE -->
+    <div id="portal-auth-gate">
+        <div class="brand-logo-container">
+            <!-- ⚡ HIGH-END VECTOR SHIELD GENERATED DIRECTLY VIA STYLE ENGINE -->
+            <div class="brand-neon-shield">DS</div>
+            <div class="brand-title">DATA-SELLING-X</div>
+        </div>
+
+        <div class="app-container">
+            <div class="auth-card">
+                <h2 id="auth-terminal-title">Account Login</h2>
+                
+                <!-- 🔒 REGISTRATION GATE EXTENDED METRIC FIELDS -->
+                <div class="form-group hidden" id="registry-node-name">
+                    <label>Full Name</label>
+                    <input type="text" id="reg-full-name" placeholder="Enter your full name">
+                </div>
+                <div class="form-group hidden" id="registry-node-email">
+                    <label>Contact Gmail Address</label>
+                    <input type="email" id="reg-contact-email" placeholder="username@gmail.com">
+                </div>
+
+                <!-- CORE CREDENTIAL ROUTING MATRIX -->
+                <div class="form-group">
+                    <label>Mobile Number Node</label>
+                    <input type="tel" id="auth-mobile-node" placeholder="Enter mobile number">
+                </div>
+                <div class="form-group">
+                    <label>Security Password PIN</label>
+                    <input type="password" id="auth-secure-pin" placeholder="Enter 4-6 digit secure PIN">
+                </div>
+
+                <button class="master-action-btn" id="auth-execution-trigger" onclick="executeAuthRequest()">Secure Access Terminal</button>
+                
+                <div class="switch-context-log" id="auth-mode-context">
+                    New operative node? <span class="switch-action-trigger" onclick="toggleAuthMode('signup')">Register Terminal</span>
+                </div>
+                
+                <!-- ⏱️ TIME-LOCKED SUPPORT RECOVERY INTEGRATION BUTTON -->
+                <a href="#" class="time-locked-forgot-trigger" onclick="routeToTimeLockedSupport()">[ Forgot Password? Reset via Support ]</a>
+                
+                <div class="telemetry-error-node" id="auth-telemetry-response"></div>
+            </div>
+        </div>
+    </div>
+    <!-- ⚡ SYSTEM ACCESS INTERACTION SCRIPTS -->
+    <script>
+        let currentAuthMode = 'login';
+
+        function toggleAuthMode(targetMode) {
+            currentAuthMode = targetMode;
+            const titleEl = document.getElementById('auth-terminal-title');
+            const nameField = document.getElementById('registry-node-name');
+            const emailField = document.getElementById('registry-node-email');
+            const submitBtn = document.getElementById('auth-execution-trigger');
+            const contextEl = document.getElementById('auth-mode-context');
+            const errorEl = document.getElementById('auth-telemetry-response');
+            
+            errorEl.innerText = "";
+            
+            if(currentAuthMode === 'signup') {
+                titleEl.innerText = "Terminal Registration";
+                nameField.classList.remove('hidden');
+                emailField.classList.remove('hidden');
+                submitBtn.innerText = "Initialize Operation Node";
+                contextEl.innerHTML = `Already have registered node? <span class="switch-action-trigger" onclick="toggleAuthMode('login')">Login Here</span>`;
+            } else {
+                titleEl.innerText = "Account Login";
+                nameField.classList.add('hidden');
+                emailField.classList.add('hidden');
+                submitBtn.innerText = "Secure Access Terminal";
+                contextEl.innerHTML = `New operative node? <span class="switch-action-trigger" onclick="toggleAuthMode('signup')">Register Terminal</span>`;
+            }
+        }
+
+        async function executeAuthRequest() {
+            const mobile = document.getElementById('auth-mobile-node').value.trim();
+            const pin = document.getElementById('auth-secure-pin').value.trim();
+            const errorEl = document.getElementById('auth-telemetry-response');
+            
+            if(!mobile || !pin) {
+                errorEl.innerText = "Error: All validation nodes must be filled!";
+                return;
+            }
+
+            let endpoint = '/api/auth/login';
+            let payload = { username: mobile, password: pin };
+
+            if(currentAuthMode === 'signup') {
+                const name = document.getElementById('reg-full-name').value.trim();
+                const email = document.getElementById('reg-contact-email').value.trim();
+                if(!name || !email) {
+                    errorEl.innerText = "Error: Registration details cannot be blank!";
+                    return;
+                }
+                endpoint = '/api/auth/register';
+                payload = { username: mobile, password: pin, fullName: name, email: email };
+            }
+
+            try {
+                errorEl.style.color = "#888888";
+                errorEl.innerText = "Transmitting authorization packets...";
+                
+                const res = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                
+                if(data.success) {
+                    errorEl.style.color = "#00FFCC";
+                    errorEl.innerText = "Access granted! Redirecting terminal...";
+                    setTimeout(() => {
+                        window.location.href = '/home.html';
+                    }, 1000);
+                } else {
+                    errorEl.style.color = "#FF3B30";
+                    errorEl.innerText = `Error: ${data.message}`;
+                }
+            } catch(e) {
+                errorEl.style.color = "#FF3B30";
+                errorEl.innerText = "Network Error: Core synchronization failed.";
+            }
+        }
+
+        // ⏱️ TIME-LOCKED REDIRECTION WINDOW ROUTER LOGIC (1:00 PM TO 7:00 PM ONLY)
+        function routeToTimeLockedSupport() {
+            const errorEl = document.getElementById('auth-telemetry-response');
+            const now = new Date();
+            const currentHour = now.getHours();
+            
+            // दोपहर 1:00 (13:00) से शाम 7:00 (19:00) तक की सख्त जांच
+            if(currentHour >= 13 && currentHour < 19) {
+                errorEl.innerText = "";
+                window.location.href = '/support.html';
+            } else {
+                errorEl.style.color = "#FF3B30";
+                errorEl.innerText = "❌ SECURITY LOCK: Support window opens only from 1:00 PM to 7:00 PM daily.";
+            }
+        }
+    </script>
+</body>
+</html>
